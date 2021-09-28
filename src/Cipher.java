@@ -22,7 +22,7 @@ public class Cipher {
     public static String getMessage(){
         //get message to encode or decode
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Write the message");
+        System.out.println("Write the message without space");
         String message = (scanner.nextLine()).toUpperCase(Locale.ROOT); // users input message will be converted to upper case
         return message;
     }
@@ -121,7 +121,7 @@ public class Cipher {
         Scanner scanner = new Scanner(System.in);
         String shiftingDirection = "";
             while (true){
-                System.out.println("Please enter shifting direction");
+                System.out.println("Please enter shifting direction: left or right");
                 shiftingDirection = (scanner.nextLine()).toLowerCase(Locale.ROOT);
                 if( (shiftingDirection.equals("left") || shiftingDirection.equals("right")) ){
                     break;
@@ -136,7 +136,7 @@ public class Cipher {
         Scanner scanner = new Scanner(System.in);
         Pattern pattern = Pattern.compile("[A-Za-z]*");
         String vigenereCipherKey = "";
-            System.out.println("Please enter key for Vigenere cipher (only english letter allowed)");
+            System.out.println("Please enter key for Vigenere cipher (only english letter allowed, now space allowed)");
             while (true){
                 if(scanner.hasNext(pattern)){
                     vigenereCipherKey = scanner.next();
